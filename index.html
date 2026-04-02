@@ -210,7 +210,7 @@
         <div class="flex justify-between items-start w-full">
             <div class="glass-panel px-4 py-2">
                 <div id="status-dot" class="inline-block w-2 h-2 rounded-full bg-red-500 mr-2 shadow-[0_0_8px_red]"></div>
-                <span id="status-text" class="text-xs md:text-sm text-gray-300 tracking-wider">SYSTEM READY</span>
+                <span id="status-text" class="text-xs md:text-sm text-gray-300 tracking-wider">HỆ THỐNG SẴN SÀNG</span>
             </div>
             <div class="flex gap-2">
                 <button id="settings-toggle" class="interactive-element p-3 glass-panel hover:bg-white/20 transition rounded-full active:scale-90 text-sm">🎨</button>
@@ -548,6 +548,8 @@
 
         function preloadShapes() {
             setTimeout(() => {
+                shapeCache['5'] = getShapePoints('text', '5');
+                shapeCache['4'] = getShapePoints('text', '4');
                 shapeCache['3'] = getShapePoints('text', '3');
                 shapeCache['2'] = getShapePoints('text', '2');
                 shapeCache['1'] = getShapePoints('text', '1');
@@ -693,10 +695,10 @@
             ui.statusText.className = "text-xs md:text-sm text-green-400 font-bold tracking-wider";
             ui.statusDot.className = "inline-block w-2 h-2 rounded-full bg-green-500 mr-2 shadow-[0_0_8px_#0f0]";
             ui.handIcon.style.display = 'none';
-            let count = 3;
+            let count = 5;
             ui.mainText.innerText = "";
             ui.subText.innerText = "";
-            transitionTo('3');
+            transitionTo('5');
             const timer = setInterval(() => {
                 count--;
                 if (count > 0) {
